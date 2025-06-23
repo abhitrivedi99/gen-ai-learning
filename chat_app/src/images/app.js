@@ -36,6 +36,14 @@ generateBtn.addEventListener('click', async (e) => {
 		return;
 	}
 
+	// Clear previous state
+	imagePreview.style.display = 'none';
+	updatedPromptDiv.style.display = 'none';
+	const imageSize = document.getElementById('imageSize');
+	const imageStyle = document.getElementById('imageStyle');
+	if (imageSize) imageSize.textContent = '';
+	if (imageStyle) imageStyle.textContent = '';
+
 	// Show loading state
 	loading.style.display = 'block';
 	generateBtn.disabled = true;
