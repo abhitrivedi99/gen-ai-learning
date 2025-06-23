@@ -134,3 +134,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# lock files    
+/chat_app/package-lock.json
+/starting/package-lock.json
