@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Image Generator</title>
+		<script>
+			// Base URL for API calls
+			window.BASE_URL = 'http://localhost:3000';
+		</script>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				max-width: 800px;
+				margin: 2rem auto;
+				padding: 1rem;
+				background-color: #f5f5f5;
+			}
+			.container {
+				background-color: white;
+				padding: 2rem;
+				border-radius: 8px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+			.form-group {
+				margin-bottom: 1rem;
+			}
+			label {
+				display: block;
+				margin-bottom: 0.5rem;
+				font-weight: bold;
+			}
+			input[type='text'] {
+				width: 100%;
+				padding: 0.5rem;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				font-size: 1rem;
+			}
+			.radio-group {
+				margin-top: 0.5rem;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+			.radio-group input[type='radio'] {
+				margin-right: 0.5rem;
+			}
+			.radio-group label {
+				display: flex;
+				align-items: center;
+			}
+			button {
+				background-color: #4caf50;
+				color: white;
+				padding: 0.8rem 1.5rem;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+				font-size: 1rem;
+				transition: background-color 0.3s;
+			}
+			button:hover {
+				background-color: #45a049;
+			}
+			.image-preview {
+				margin-top: 2rem;
+				text-align: center;
+			}
+			.image-preview img {
+				max-width: 100%;
+				height: auto;
+				border-radius: 4px;
+			}
+			.image-info {
+				margin-top: 1rem;
+				text-align: center;
+				color: #666;
+			}
+			.updated-prompt {
+				margin-top: 1.5rem;
+				padding: 1rem;
+				border-radius: 4px;
+				background-color: #f8f9fa;
+				border-left: 4px solid #007bff;
+			}
+			.updated-prompt h3 {
+				margin: 0 0 0.5rem 0;
+				color: #007bff;
+			}
+			.updated-prompt p {
+				margin: 0;
+				color: #333;
+			}
+			.error-message {
+				color: red;
+				margin-top: 1rem;
+			}
+			.loading {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+			}
+			.loading-spinner {
+				width: 40px;
+				height: 40px;
+				border: 4px solid #f3f3f3;
+				border-top: 4px solid #3498db;
+				border-radius: 50%;
+				animation: spin 1s linear infinite;
+			}
+			@keyframes spin {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			@media (max-width: 600px) {
+				.container {
+					padding: 1rem;
+				}
+				.radio-group {
+					gap: 0.5rem;
+				}
+				.image-preview img {
+					max-width: 90%;
+				}
+				.radio-group {
+					flex-direction: column;
+				}
+			}
+			.radio-group input[type='radio'] {
+				margin-right: 0.5rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>AI Image Generator</h1>
+			<div class="form-group">
+				<label for="prompt">Image Description:</label>
+				<input type="text" id="prompt" placeholder="Enter your image description here" />
+			</div>
+			<div class="form-group">
+				<label>Image Size:</label>
+				<div class="radio-group">
+					<input type="radio" id="size1" name="size" value="1792x1024" checked />
+					<label for="size1">1792x1024</label>
+					<input type="radio" id="size3" name="size" value="1024x1024" />
+					<label for="size3">1024x1024</label>
+					<input type="radio" id="size8" name="size" value="1024x1792" />
+					<label for="size8">1024x1792</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Style:</label>
+				<div class="radio-group">
+					<input type="radio" id="style1" name="style" value="natural" checked />
+					<label for="style1">Natural</label>
+					<input type="radio" id="style2" name="style" value="vivid" />
+					<label for="style2">Vivid</label>
+				</div>
+			</div>
+			<button id="generateBtn">Generate Image</button>
+			<div id="updatedPrompt" class="updated-prompt" style="display: none">
+				<h3>Updated Prompt:</h3>
+				<p id="updatedPromptText"></p>
+			</div>
+			<div class="image-preview">
+				<img id="imagePreview" src="" alt="Generated Image" style="display: none" />
+				<div class="image-info">
+					<span id="imageSize"></span>
+					<span id="imageStyle"></span>
+				</div>
+			</div>
+			<div id="errorMessage" class="error-message" style="display: none">
+				<p>Error: <span id="errorText"></span></p>
+			</div>
+			<div class="loading" style="display: none">
+				<p>Generating image...</p>
+			</div>
+		</div>
+
+		<script src="app.js" type="module"></script>
+	</body>
+</html>
