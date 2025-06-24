@@ -138,4 +138,7 @@ dist
 # lock files    
 /chat_app/package-lock.json
 /starting/package-lock.json
-/chat_app/public
+/embedding_app/package-lock.json
+
+# public files
+public/
