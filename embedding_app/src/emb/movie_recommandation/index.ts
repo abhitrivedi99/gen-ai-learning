@@ -14,6 +14,9 @@ type moviesWithEmbedding = {
 	embeddings: number[];
 };
 
+console.log('I am movie suggesting Agent, Let me know your choices?');
+console.log('...............');
+
 async function getMovieEmbeddings() {
 	const data = loadJsonDataSync<movie[]>('src/emb/movie_recommandation/movie.json');
 
