@@ -54,13 +54,13 @@ async function recommendMovies(userInput: string) {
 
 	const inputEmbeddings = await generateEmbeddings(userInput);
 
-	const similarities: { input: string; similarity: number; description: string }[] = [];
+	const similarities: { name: string; similarity: number; description: string }[] = [];
 
 	for (let entry of moviesWithEmbeddings) {
 		const similarity = cosineSimilarity(entry.embeddings, inputEmbeddings.data[0].embedding);
 
 		similarities.push({
-			input: entry.name,
+			name: entry.name,
 			similarity,
 			description: entry.description,
 		});
