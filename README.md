@@ -6,10 +6,10 @@ Few small projects for gen AI.
 
 -   [x] Starting
 -   [x] Embedding
--         [x] Movie Recommendation
+-           [x] Movie Recommendation
 -   [x] Chat
--         [x] Audio
--         [x] Image
--         [x] Video
--         [x] Tools
--   [ ] Huggingface
+-           [x] Audio
+-           [x] Image
+-           [x] Video
+-           [x] Tools
+-   [x] Huggingface
