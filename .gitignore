@@ -139,6 +139,7 @@ dist
 /chat_app/package-lock.json
 /starting/package-lock.json
 /embedding_app/package-lock.json
+/huggingface_models/package-lock.json
 
 # public files
 public/
