@@ -1,11 +1,11 @@
 {
 	"compilerOptions": {
 		"target": "ES2022",
-		"module": "commonjs",
-		"rootDir": "src",
-		"outDir": "dist",
-		"strict": true,
+		"module": "ESNext",
+		"moduleResolution": "node",
 		"esModuleInterop": true,
-		"useUnknownInCatchVariables": false
+		"outDir": "dist",
+		"rootDir": "src",
+		"strict": true
 	}
 }

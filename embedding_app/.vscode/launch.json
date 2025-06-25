@@ -14,7 +14,7 @@
 			"envFile": "${workspaceFolder}/.env",
 			"console": "integratedTerminal",
 			"runtimeExecutable": "node",
-			"program": "${workspaceFolder}embedding_app/src/emb/data.ts"
+			"program": "${workspaceFolder}/src/emb/data.ts"
 			// "skipFiles": [
 			//     "<node_internals>/**"
 			// ],

@@ -2,8 +2,9 @@
 	"name": "embedding_app",
 	"version": "1.0.0",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
-		"start": "ts-node-dev --respawn --transpile-only src/emb/data.ts"
+		"start": "ts-node-dev --respawn --transpile-only src/emb/similar.ts"
 	},
 	"keywords": [],
 	"author": "",
