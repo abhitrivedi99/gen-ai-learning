@@ -43,11 +43,9 @@ async function main() {
 	}
 }
 
-function cosineSimilarity(a: number[], b: number[]) {
+export function cosineSimilarity(a: number[], b: number[]) {
 	const product = dotProduct(a, b);
 	const aMagnitude = Math.sqrt(a.map((value) => value * value).reduce((a, b) => a + b, 0));
 	const bMagnitude = Math.sqrt(b.map((value) => value * value).reduce((a, b) => a + b, 0));
 	return product / (aMagnitude * bMagnitude);
 }
-
-main();

@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"start": "ts-node-dev --respawn --transpile-only src/emb/similar.ts"
+		"start": "ts-node-dev --respawn --transpile-only src/emb/movie_recommandation/index.ts"
 	},
 	"keywords": [],
 	"author": "",
