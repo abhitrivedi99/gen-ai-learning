@@ -2,15 +2,17 @@
 	"name": "embedding_app",
 	"version": "1.0.0",
 	"main": "index.js",
-	"type": "module",
 	"scripts": {
-		"start": "ts-node-dev --respawn --transpile-only src/emb/movie_recommandation/index.ts"
+		"build": "tsc",
+		"start": "ts-node-dev --respawn --transpile-only src/vector/RelavantInfo.ts",
+		"start2": "npm run build && node ./dist/vector/index.js"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"description": "",
 	"dependencies": {
+		"@pinecone-database/pinecone": "^6.1.1",
 		"dotenv": "^16.5.0",
 		"openai": "^5.5.0",
 		"tiktoken": "^1.0.21"
