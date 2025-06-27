@@ -140,6 +140,7 @@ dist
 /starting/package-lock.json
 /embedding_app/package-lock.json
 /huggingface_models/package-lock.json
+/langchain_app/package-lock.json
 
 # public files
 public/
