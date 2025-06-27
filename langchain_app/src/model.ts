@@ -3,7 +3,7 @@ import { ChatOpenAI } from '@langchain/openai';
 
 export const model = new ChatOpenAI({
 	model: 'chatgpt-4o-latest',
-	temperature: 0.7,
+	temperature: 0.0,
 	maxTokens: 300,
 	verbose: false,
 });

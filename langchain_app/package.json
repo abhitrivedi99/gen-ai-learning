@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"scripts": {
 		"build": "tsc",
-		"start": "ts-node-dev --respawn --transpile-only src/outputParsers.ts",
+		"start": "ts-node-dev --respawn --transpile-only src/RAG/index.ts",
 		"start2": "npm run build && node ./dist/index.js"
 	},
 	"keywords": [],
