@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { ChatOpenAI } from '@langchain/openai';
 
-const model = new ChatOpenAI({
+export const model = new ChatOpenAI({
 	model: 'chatgpt-4o-latest',
 	temperature: 0.7,
 	maxTokens: 300,
