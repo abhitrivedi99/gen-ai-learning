@@ -37,5 +37,3 @@ async function main() {
 	const response = await chain.invoke({ input: question, context: results });
 	console.log(response.content);
 }
-
-main();
